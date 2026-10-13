@@ -18,7 +18,7 @@ class _Tab1ScreenState extends State<Tab1Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WinPomoFocus • Sprint'),
+        title: const Text('Win • Sprint'),
         actions: [
           IconButton(
             icon: const Icon(Icons.bolt, color: AppTheme.primaryColor),
