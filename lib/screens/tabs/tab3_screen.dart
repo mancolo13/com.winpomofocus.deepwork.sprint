@@ -36,7 +36,7 @@ class _Tab3ScreenState extends State<Tab3Screen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Live Notifications', style: TextStyle(fontSize: 15)),
+                    const Text('Live Notifications', style: TextStyle(fontSize: 15), maxLines: 1, overflow: TextOverflow.ellipsis),
                     Switch(
                       value: _notifs,
                       activeThumbColor: AppTheme.secondaryColor,
@@ -45,7 +45,7 @@ class _Tab3ScreenState extends State<Tab3Screen> {
                   ],
                 ),
                 const Divider(height: 24),
-                const Text('White Noise Level', style: TextStyle(fontSize: 15)),
+                const Text('White Noise Level', style: TextStyle(fontSize: 15), maxLines: 1, overflow: TextOverflow.ellipsis),
                 Slider(
                   value: _volume,
                   activeColor: AppTheme.secondaryColor,

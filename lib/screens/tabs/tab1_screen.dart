@@ -112,9 +112,9 @@ class _Tab1ScreenState extends State<Tab1Screen> {
         children: [
           Icon(icon, color: AppTheme.secondaryColor, size: 28),
           const SizedBox(height: 10),
-          Text(title, style: const TextStyle(color: Colors.white60, fontSize: 13)),
+          Text(title, style: const TextStyle(color: Colors.white60, fontSize: 13), maxLines: 1, overflow: TextOverflow.ellipsis),
           const SizedBox(height: 4),
-          Text(val, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          FittedBox(fit: BoxFit.scaleDown, alignment: Alignment.centerLeft, child: Text(val, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
         ],
       ),
     );

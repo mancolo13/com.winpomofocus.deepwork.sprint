@@ -33,8 +33,10 @@ class _Tab2ScreenState extends State<Tab2Screen> {
               color: AppTheme.surfaceColor,
               borderRadius: BorderRadius.circular(16),
             ),
+            child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _buildFilterChip('Sprint 25m', 0),
                 _buildFilterChip('Deep 50m', 1),
@@ -42,6 +44,7 @@ class _Tab2ScreenState extends State<Tab2Screen> {
                 _buildFilterChip('Long Break', 3),
               ],
             ),
+          ),
           ),
           const SizedBox(height: 16),
           ...List.generate(5, (idx) => Container(
@@ -70,7 +73,7 @@ class _Tab2ScreenState extends State<Tab2Screen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(const ['Architecture Design Doc', 'Refactor Core Network', 'Unit Test Coverage 90%', 'API Security Review', 'Release Candidate QA'][idx], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                      Text(const ['Architecture Design Doc', 'Refactor Core Network', 'Unit Test Coverage 90%', 'API Security Review', 'Release Candidate QA'][idx], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis),
                       const SizedBox(height: 4),
                       Text('Category: Tier ${idx + 1} • Updated 2h ago', style: const TextStyle(color: Colors.white60, fontSize: 12)),
                     ],
@@ -98,6 +101,7 @@ class _Tab2ScreenState extends State<Tab2Screen> {
     return GestureDetector(
       onTap: () => setState(() => _selectedIdx = i),
       child: Container(
+        margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         decoration: BoxDecoration(
           color: active ? AppTheme.primaryColor : Colors.white10,
