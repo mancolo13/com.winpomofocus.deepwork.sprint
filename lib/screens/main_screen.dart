@@ -52,7 +52,6 @@ class _MainScreenState extends State<MainScreen> {
           selectedIcon: const Icon(Icons.trending_up, color: AppTheme.primaryColor),
           label: 'Stats',
         ),
-
         ],
       ),
     );

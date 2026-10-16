@@ -12,7 +12,7 @@ class Tab1Screen extends StatefulWidget {
 class _Tab1ScreenState extends State<Tab1Screen> {
   int _activeCounter = 84;
   bool _liveSync = true;
-  double _sliderVal = 0.72;
+  double _sliderVal = 0.94;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _Tab1ScreenState extends State<Tab1Screen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Sprint Score', style: const TextStyle(fontSize: 16, color: Colors.white70)),
+                      Text('Focus Efficiency', style: const TextStyle(fontSize: 16, color: Colors.white70)),
                       Switch(
                         value: _liveSync,
                         activeThumbColor: AppTheme.primaryColor,
@@ -56,10 +56,10 @@ class _Tab1ScreenState extends State<Tab1Screen> {
                     ],
                   ),
                   const SizedBox(height: 12),
-                  Text('$_activeCounter%', style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.white)),
+                  Text('94%', style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.white)),
                   const SizedBox(height: 8),
                   LinearProgressIndicator(
-                    value: _sliderVal,
+                  value: _sliderVal,
                     backgroundColor: Colors.white12,
                     color: AppTheme.primaryColor,
                     minHeight: 8,
@@ -71,9 +71,9 @@ class _Tab1ScreenState extends State<Tab1Screen> {
             const SizedBox(height: 20),
             Row(
               children: [
-                Expanded(child: _buildMetricCard('Efficiency', '98.4%', Icons.speed)),
+                Expanded(child: _buildMetricCard('Deep Work', '5h 20m', Icons.speed)),
                 const SizedBox(width: 12),
-                Expanded(child: _buildMetricCard('Sessions', '1,420', Icons.analytics)),
+                Expanded(child: _buildMetricCard('Sprints', '12', Icons.analytics)),
               ],
             ),
             const SizedBox(height: 20),
@@ -88,7 +88,7 @@ class _Tab1ScreenState extends State<Tab1Screen> {
                   backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.2),
                   child: Icon(Icons.check_circle, color: AppTheme.primaryColor),
                 ),
-                title: Text('Sprint Milestone ${i + 1}', style: const TextStyle(fontWeight: FontWeight.bold)),
+                title: Text('Focus Sprint #${i + 1}', style: const TextStyle(fontWeight: FontWeight.bold)),
                 subtitle: Text('Status: Complete • ${ (i + 1) * 24 }m logged'),
                 trailing: const Icon(Icons.chevron_right, color: Colors.white38),
                 onTap: () => setState(() => _activeCounter = (_activeCounter + 1) % 100),
